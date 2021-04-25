@@ -3,7 +3,7 @@ package app
 import (
 	"net/http"
 
-	"./controllers"
+	"GolangWorkspace/go-microservices/mvc/controllers"
 )
 
 func StartApp() {

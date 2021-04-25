@@ -1,6 +1,6 @@
 package main
 
-import "github.com/itsmeprakhar22/golang-microservices-practice/app/app.go"
+import "GolangWorkspace/go-microservices/mvc/app"
 
 func main() {
 	app.StartApp()
