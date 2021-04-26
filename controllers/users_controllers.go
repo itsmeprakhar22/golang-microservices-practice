@@ -12,18 +12,18 @@ import (
 func GetUser(c *gin.Context) {
 	userId, err := strconv.ParseInt(c.Query("user_id"), 10, 64)
 	if err != nil {
-		apiErr := utils.ApplicationError{
+		apiErr := &utils.ApplicationError{
 			Message:    "user_id must be a number",
 			StatusCode: http.StatusBadRequest,
 			Code:       "bad_request",
 		}
-		utils.Respond(c, http.StatusNotFound, apiErr)
+		utils.RespondError(c, apiErr)
 		return
 	}
 	user, apiErr := services.GetUser(userId)
 
 	if apiErr != nil {
-		utils.Respond(c, http.StatusBadRequest, apiErr)
+		utils.RespondError(c, apiErr)
 		return
 	}
 	utils.Respond(c, http.StatusOK, user)
