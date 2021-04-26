@@ -1,6 +1,8 @@
 package domain
 
-func GetUser(userId uint64) (User, error) {
+import "GolangWorkspace/go-microservices/mvc/utils"
+
+func GetUser(userId int64) (User, *utils.ApplicationError) {
 	return User{
 		123,
 		"Prakhar",

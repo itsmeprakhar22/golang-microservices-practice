@@ -1,7 +1,10 @@
 package services
 
-import "GolangWorkspace/go-microservices/mvc/domain"
+import (
+	"GolangWorkspace/go-microservices/mvc/domain"
+	"GolangWorkspace/go-microservices/mvc/utils"
+)
 
-func GetUser(userId uint64) (domain.User, error) {
+func GetUser(userId int64) (domain.User, *utils.ApplicationError) {
 	return domain.GetUser(userId)
 }
